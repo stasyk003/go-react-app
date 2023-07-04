@@ -1,0 +1,57 @@
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+  
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+  
+.form-input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+  
+.form-submit, .list-button, .close-button {
+    font-weight: bold;
+    display: block;
+    width: 107%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+  
+.form-submit, .list-button, .close-button:hover {
+    background-color: #0069d9;
+}
+
+.update-button, .delete-button {
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-button, .delete-button:hover {
+    background-color: #0069d9;
+}
+

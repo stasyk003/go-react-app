@@ -1,0 +1,43 @@
+name: Full-Stack Web App Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Node.js and NPM
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install project dependencies
+      run: npm install 
+      working-directory: client
+
+    - name: Build React app
+      run: npm run build
+      working-directory: client
+      env:
+        CI: false
+
+    - name: Build Go app
+      run: go build
+      working-directory: server
+      
+    - name: Test Go app
+      run: go test ./...
+      working-directory: server
